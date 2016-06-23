@@ -12,19 +12,27 @@ import {
   View
 } from 'react-native';
 import InitialPage from './app/inital_page';
+import CreateQuestion from './app/create_question';
 
 class Test extends Component {
+  navigatorRenderScene(route, navigator) {
+    _navigator = navigator;
+    switch (route.id) {
+      case 'second':
+        return (<CreateQuestion navigator={navigator} title="first"/>);
+    }
+  }
   render() {
     return (
       <NavigatorIOS
         style={styles.navigator}
-        initialRoute={{component: InitialPage, title: 'Welcome to The Decider'}}/>
+        initialRoute={{component: InitialPage, title: 'Welcome to The Decider'}}
+        renderScene={this.navigatorRenderScene}/>
     );
   }
 }
 
 AppRegistry.registerComponent('Test', () => Test);
 const styles = StyleSheet.create({
-
   navigator: {flex: 1}
 });
