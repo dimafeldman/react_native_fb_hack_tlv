@@ -5,14 +5,12 @@ import { Button } from 'react-native-material-design';
 export default class InitialPage extends Component {
 
   goToQuestion() {
-    console.log('hi');
     this.props.navigator.push({
       id: 'createQuestion'
     })
   }
 
   goToEnterPin() {
-    console.log('hi');
     this.props.navigator.push({
       id: 'insertPin'
     })

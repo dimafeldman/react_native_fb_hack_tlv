@@ -14,6 +14,9 @@ import {
 import InitialPage from './app/inital_page';
 import CreateQuestion from './app/create_question';
 import InsertPin from './app/insert_pin';
+import YourPinCode from './app/your_pin_code';
+import QuestionPage from './app/question_page';
+import QuestionResultsPage from './app/question_results_page';
 
 class Test extends Component {
   navigatorRenderScene(route, navigator) {
@@ -25,13 +28,19 @@ class Test extends Component {
         return (<CreateQuestion navigator={navigator} title="Create Question"/>);
       case 'insertPin':
         return (<InsertPin navigator={navigator} title="Insert Pin"/>);
+      case 'yourPinCode':
+        return (<YourPinCode navigator={navigator} title="Your Pin Code is"/>);
+      case 'questionPage':
+        return (<QuestionPage navigator={navigator} title="Question Page"/>);
+      case 'questionResultsPage':
+        return (<QuestionResultsPage navigator={navigator} title="Question Results Page"/>);
     }
   }
   render() {
     return (
       <Navigator
         style={styles.navigator}
-        initialRoute={{id: 'initialPage'}}
+        initialRoute={{id: 'initialPage'}} /// <------------- temp - change to: initialPage
         renderScene={this.navigatorRenderScene}/>
     );
   }
