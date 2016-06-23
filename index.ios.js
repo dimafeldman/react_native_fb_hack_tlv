@@ -17,16 +17,16 @@ class Test extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          The decider
         </Text>
-        <Button text="Booya"/>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <View>
+            <View>
+                <Button text='Ask a question' raised={true} theme="dark" />
+            </View>
+            <View>
+                <Button text='Vote' raised={true} theme="dark" />
+            </View>
+        </View>
       </View>
     );
   }
