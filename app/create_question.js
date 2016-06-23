@@ -6,6 +6,11 @@ export default class CreateQuestion extends Component {
 
   submitQuestion() {
     // submit question goes here
+    console.log(this.state);
+  }
+
+  handlerQuestion() {
+    this.state.question
   }
 
   render() {
@@ -18,22 +23,27 @@ export default class CreateQuestion extends Component {
           <TextInput
               style={styles.basicInput}
               placeholder="Write your question here"
+              onChangeText={(text) => this.setState({text})}
             />
           <TextInput
               style={styles.basicInput}
               placeholder="Option 1"
+              onChangeText={(option_1) => this.setState({option_1})}
             />
           <TextInput
               style={styles.basicInput}
-              placeholder="Option 1"
+              placeholder="Option 2"
+              onChangeText={(option_2) => this.setState({option_2})}
             />
           <TextInput
               style={styles.basicInput}
-              placeholder="Option 1"
+              placeholder="Option 3"
+              onChangeText={(option_3) => this.setState({option_3})}
             />
           <TextInput
               style={styles.basicInput}
-              placeholder="Option 1"
+              placeholder="Option 4"
+              onChangeText={(option_4) => this.setState({option_4})}
             />
 
             <Button text='Submit Question' onPress={this.submitQuestion.bind(this)} raised={true} theme="dark" />

@@ -40,7 +40,7 @@ class Test extends Component {
     return (
       <Navigator
         style={styles.navigator}
-        initialRoute={{id: 'initialPage'}} /// <------------- temp - change to: initialPage
+        initialRoute={{id: 'createQuestion'}} /// <------------- temp - change to: initialPage
         renderScene={this.navigatorRenderScene}/>
     );
   }
