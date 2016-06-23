@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, TextInput} from 'react-native';
 import { Button } from 'react-native-material-design';
 
 export default class CreateQuestion extends Component {
+
+  submitQuestion() {
+    // submit question goes here
+  }
 
   render() {
     return (
@@ -10,8 +14,29 @@ export default class CreateQuestion extends Component {
         <Text style={styles.welcome}>
           Write your question
         </Text>
-        <View>
+        <View style={styles.basicPage}>
+          <TextInput
+              style={styles.basicInput}
+              placeholder="Write your question here"
+            />
+          <TextInput
+              style={styles.basicInput}
+              placeholder="Option 1"
+            />
+          <TextInput
+              style={styles.basicInput}
+              placeholder="Option 1"
+            />
+          <TextInput
+              style={styles.basicInput}
+              placeholder="Option 1"
+            />
+          <TextInput
+              style={styles.basicInput}
+              placeholder="Option 1"
+            />
 
+            <Button text='Submit Question' onPress={this.submitQuestion.bind(this)} raised={true} theme="dark" />
         </View>
       </View>
     )
@@ -28,5 +53,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  basicPage: {
+    marginLeft: 20,
+    marginRight: 20
+  },
+  basicInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 15
   }
 });
