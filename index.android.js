@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
+import { Button } from 'react-native-material-design';
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -19,6 +19,7 @@ class Test extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
+        <Button text="Booya"/>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
         </Text>
