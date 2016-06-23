@@ -6,38 +6,29 @@
 import { Button } from 'react-native-material-design';
 import React, { Component } from 'react';
 import {
+  NavigatorIOS,
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import InitialPage from './app/inital_page';
 
 class Test extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Button text="Booya"/>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <NavigatorIOS
+        style={styles.navigator}
+        initialRoute={{component: InitialPage, title: 'HomePage'}}/>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
+  navigator: {flex: 1},
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flex: 1
   },
   welcome: {
     fontSize: 20,
