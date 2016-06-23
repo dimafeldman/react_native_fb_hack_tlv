@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import InitialPage from './app/inital_page';
 import CreateQuestion from './app/create_question';
+import InsertPin from './app/insert_pin';
 
 class Test extends Component {
   navigatorRenderScene(route, navigator) {
@@ -26,7 +27,7 @@ class Test extends Component {
     return (
       <NavigatorIOS
         style={styles.navigator}
-        initialRoute={{component: InitialPage, title: 'Welcome to The Decider'}}
+        initialRoute={{component: InsertPin, title: 'Welcome to The Decider'}}
         renderScene={this.navigatorRenderScene}/>
     );
   }
