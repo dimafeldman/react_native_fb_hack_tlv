@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import { Button } from 'react-native-material-design';
 
-export default class InitialPage extends Component {
+export default class CreateQuestion extends Component {
 
   render() {
     return (

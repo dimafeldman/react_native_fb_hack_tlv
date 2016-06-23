@@ -5,7 +5,7 @@
  */
 import React, { Component } from 'react';
 import {
-  NavigatorIOS,
+  Navigator,
   AppRegistry,
   StyleSheet,
   Text,
@@ -19,15 +19,19 @@ class Test extends Component {
   navigatorRenderScene(route, navigator) {
     _navigator = navigator;
     switch (route.id) {
-      case 'second':
-        return (<CreateQuestion navigator={navigator} title="first"/>);
+      case 'initialPage':
+        return (<InitialPage navigator={navigator} title="Home page"/>);
+      case 'createQuestion':
+        return (<CreateQuestion navigator={navigator} title="Create Question"/>);
+      case 'insertPin':
+        return (<InsertPin navigator={navigator} title="Insert Pin"/>);
     }
   }
   render() {
     return (
-      <NavigatorIOS
+      <Navigator
         style={styles.navigator}
-        initialRoute={{component: InsertPin, title: 'Welcome to The Decider'}}
+        initialRoute={{id: 'initialPage'}}
         renderScene={this.navigatorRenderScene}/>
     );
   }

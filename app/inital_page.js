@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, TouchableHighlight} from 'react-native';
 import { Button } from 'react-native-material-design';
 
 export default class InitialPage extends Component {
+
+  goToQuestion() {
+    console.log('hi');
+    this.props.navigator.push({
+      id: 'createQuestion'
+    })
+  }
+
+  goToEnterPin() {
+    console.log('hi');
+    this.props.navigator.push({
+      id: 'insertPin'
+    })
+  }
 
   render() {
     return (
@@ -12,10 +26,10 @@ export default class InitialPage extends Component {
         </Text>
         <View>
             <View>
-                <Button text='Ask a question' raised={true} theme="dark" />
+                <Button text='Ask a question' onPress={this.goToQuestion.bind(this)} raised={true} theme="dark" />
             </View>
             <View>
-                <Button text='Vote' raised={true} theme="dark" />
+                <Button text='Vote' onPress={this.goToEnterPin.bind(this)} raised={true} theme="dark" />
             </View>
         </View>
       </View>
